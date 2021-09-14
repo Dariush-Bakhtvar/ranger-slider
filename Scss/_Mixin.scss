@@ -11,7 +11,7 @@
 }
 
 @mixin br-radius($params...) {
-    border-radius: $prams;
+    border-radius: $params;
 }
 
 @mixin box-shadow($params...) {

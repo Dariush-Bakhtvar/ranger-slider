@@ -14,10 +14,90 @@ body {
   background-color: #575fcf;
 }
 
+.tooltip span::after, .renger-trunk, .renger-btn {
+  background-color: #575fcf;
+}
+
 .ranger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 60%;
   height: 60px;
   position: relative;
   background-color: #fff;
+  border-radius: 4px;
+}
+
+.tooltip {
+  position: relative;
+  width: 90%;
+}
+
+.tooltip span {
+  position: absolute;
+  top: -55px;
+  width: 30px;
+  height: 30px;
+  color: #ecf0f1;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 3;
+  transform: translateX(-3px) scale(1);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tooltip span::after {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  content: "";
+  color: #ecf0f1;
+  transform: translateX(-15px) rotate(45deg);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  border: 3px solid #ecf0f1;
+  left: 0;
+  z-index: -1;
+  border-radius: 50% 50% 0 50%;
+  box-shadow: 1px 1px #ccc;
+}
+
+.tooltip span .active {
+  transform: translateX(-3px) scale(1);
+}
+
+.ranger-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 15px;
+  background-color: #bdc3c7;
+  border-radius: 8px;
+  position: relative;
+}
+
+.renger-trunk {
+  width: 0;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.renger-btn {
+  width: 27px;
+  height: 27px;
+  border: 3px solid #ecf0f1;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
 }
 /*# sourceMappingURL=style.css.map */

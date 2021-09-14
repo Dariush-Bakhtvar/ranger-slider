@@ -1,7 +1,73 @@
 @import "variable";
 @import "Mixin";
+%bg-color {
+    background-color: map-get($map: $color, $key: one);
+}
+
 .ranger {
+    @include display(flex, center, center, column);
     @include width-height(60%, 60px);
     position: relative;
     background-color: map-get($map: $color, $key: two);
+    @include br-radius(4px);
+}
+
+.tooltip {
+    position: relative;
+    width: 90%;
+    span {
+        position: absolute;
+        top: -55px;
+        @include width-height(30px, 30px);
+        color: $initial-color;
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 3;
+        transform: translateX(-3px) scale(1);
+        transform-origin: bottom;
+        transition: transform 0.3s ease-in-out;
+        &::after {
+            position: absolute;
+            @include width-height(30px, 30px);
+            content: "";
+            @extend %bg-color;
+            color: $initial-color;
+            transform: translateX(-15px) rotate(45deg);
+            transform-origin: bottom;
+            transition: transform 0.3s ease-in-out;
+            border: 3px solid $initial-color;
+            left: 0;
+            z-index: -1;
+            @include br-radius(50% 50% 0 50%);
+            @include box-shadow(1px 1px #ccc);
+        }
+        .active {
+            transform: translateX(-3px) scale(1);
+        }
+    }
+}
+
+.ranger-bar {
+    @include display(flex, space-around, center);
+    @include width-height(90%, 15px);
+    background-color: map-get($map: $color, $key: four);
+    @include br-radius(8px);
+    position: relative;
+}
+
+.renger-trunk {
+    @include width-height(0, 100%);
+    @extend %bg-color;
+    @include br-radius(8px);
+    @include display(flex, flex-start, center);
+}
+
+.renger-btn {
+    @include width-height(27px, 27px);
+    @extend %bg-color;
+    border: 3px solid $initial-color;
+    @include br-radius(50%);
+    cursor: pointer;
+    position: absolute;
+    left: 0;
 }
