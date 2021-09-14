@@ -1,0 +1,19 @@
+@mixin display($display, $justify, $align, $dir: row) {
+    display: $display;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin br-radius($params...) {
+    border-radius: $prams;
+}
+
+@mixin box-shadow($params...) {
+    box-shadow: $params;
+}

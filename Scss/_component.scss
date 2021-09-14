@@ -1,0 +1,7 @@
+@import "variable";
+@import "Mixin";
+.ranger {
+    @include width-height(60%, 60px);
+    position: relative;
+    background-color: map-get($map: $color, $key: two);
+}

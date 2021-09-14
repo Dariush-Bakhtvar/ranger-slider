@@ -1,0 +1,13 @@
+@import "variable";
+@import "Mixin";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include display(flex, space-around, center, column);
+    @include width-height(100%, 500px);
+    background-color: map-get($map: $color, $key: one);
+}
