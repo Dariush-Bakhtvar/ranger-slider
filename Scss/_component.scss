@@ -23,7 +23,7 @@
         text-align: center;
         font-size: 0.9rem;
         line-height: 3;
-        transform: translateX(-3px) scale(1);
+        transform: translateX(-3px) scale(0);
         transform-origin: bottom;
         transition: transform 0.3s ease-in-out;
         &::after {
